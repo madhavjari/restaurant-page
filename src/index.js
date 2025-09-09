@@ -1,0 +1,1 @@
+import { brandName } from "./home.js";
