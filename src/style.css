@@ -1,0 +1,17 @@
+:root{
+    --light-pink: rgb(236,212,195);
+    --orange: rgb(236, 74, 24);
+}
+
+body{
+    text-align: center;
+}
+h1{
+    font-size: 5rem;
+    background-color: var(--light-pink);
+    color: var(--orange);
+}
+
+ul li{
+    list-style-type:none;
+}
