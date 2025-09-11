@@ -1,9 +1,11 @@
 import "./style.css";
 function home(){
     const homePage = document.createElement('div');
+    homePage.className = 'home';
     //creating main four containers of home page
     const brandName = document.createElement('h1'); //exporting the parent element
     const brandIntro = document.createElement('div');
+    brandIntro.className = 'intro';
     const brandWhyChoose = document.createElement('div');
     const brandContact = document.createElement('div');
     homePage.append(brandName,brandIntro,brandWhyChoose,brandContact);

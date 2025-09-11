@@ -10,39 +10,57 @@ function menu(){
                 'Chicken Fry','Chicken Tikka','Green Chicken',
                 'Angara Chicken','Tandoori Chicken','Golden Tikka',
                 'Chicken Peri Peri','Malai Cheese Tikka','Chicken Butter Masala(Gravy)',
-                'Chicken Curry(Gravy)','Lemon Chicken(Gravy',
+                'Chicken Curry(Gravy)','Lemon Chicken(Gravy)',
                 'Mutton Biryani','Chicken Biryani'];
-    const header1 = document.createElement('h2');
-    header1.textContent = 'Mutton';
-    const header1List = document.createElement('ul');
-    let header1Menu = [];
-    for(let i = 0; i < 9;i++){
-        header1Menu[i] = document.createElement('li');
-        header1Menu[i].textContent = menuList[i];
-        header1List.appendChild(header1Menu[i]);
-    }
+    
+    const menuPrice = ['1000/-','1000/-','1000/-','1100/-','1100/-',
+                '1000/-','1000/-','1000/-','300/-','700/-','700/-',
+                '700/-','700/-','750/-','750/-','750/-','900/-',
+                '700/-','700/-','750/-', '1000/-','900/-'];
 
-    const header2 = document.createElement('h2');
-    header2.textContent = 'Chicken';
-    const header2List = document.createElement('ul');
-    let header2Menu = [];
-    for(let i = 9; i < 20;i++){
-        header2Menu[i] = document.createElement('li');
-        header2Menu[i].textContent = menuList[i];
-        header2List.appendChild(header2Menu[i]);
-    }
 
-    const header3 = document.createElement('h2');
-    header3.textContent = 'Biryani';
-    const header3List = document.createElement('ul');
-    let header3Menu = [];
-    for(let i = 20; i < 22;i++){
-        header3Menu[i] = document.createElement('li');
-        header3Menu[i].textContent = menuList[i];
-        header3List.appendChild(header3Menu[i]);
-    }
-    menuPage.append(header1,header1List,header2,header2List,header3,header3List);
+    const menuName = ['Mutton', 'Chicken', 'Biryani'];
+    const menuKg = '1kg';
+    //declaration of header
+    let header = [];
+    //content under header
+    let perKg = [];
+    let headerTitle = [];
+
+    //declaration of menu
+    let menuDiv = [];
+    //content under menu
+    let menu = [];
+    let price = [];   
+    let counter = 0;
+    let headerList = [];
+    let countUpto;
+    const leng = [9,11,2];
+    for(let i = 0; i< 3; i++){
+        header[i] = document.createElement('div');
+        headerTitle[i] = document.createElement('h2');
+        perKg[i] = document.createElement('h2');
+        headerTitle[i].textContent = menuName[i];
+        headerList[i] = document.createElement('ul');
+        perKg[i].textContent = menuKg;
+        header[i].append(headerTitle[i],perKg[i]);
+        console.log(header[i]);
+        menu[i] = [];
+        price[i] = [];
+        menuDiv[i] = [];
+        countUpto = counter + leng[i];
+        for(let j = counter; j < countUpto; j++){
+            menuDiv[i][j] = document.createElement('div');
+            menu[i][j] = document.createElement('li');
+            menu[i][j].textContent = menuList[j];
+            price[i][j] = document.createElement('li');
+            price[i][j].textContent = menuPrice[j];
+            headerList[i].appendChild(menuDiv[i][j]);
+            menuDiv[i][j].append(menu[i][j],price[i][j]);
+            counter++;
+       }
+        menuPage.append(header[i],headerList[i]);
+      }
     return menuPage;
 }
-
 export default menu();
