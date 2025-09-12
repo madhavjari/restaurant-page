@@ -3,7 +3,7 @@ function home(){
     const homePage = document.createElement('div');
     homePage.className = 'home';
     //creating main four containers of home page
-    const brandName = document.createElement('h1'); //exporting the parent element
+    const brandName = document.createElement('h1');
     const brandIntro = document.createElement('div');
     brandIntro.className = 'intro';
     const brandWhyChoose = document.createElement('div');
@@ -17,8 +17,8 @@ function home(){
     const brandIntro2 = document.createElement('div');
     const brandIntro3 = document.createElement('div');
     const textForBrand1 = "Authentic Non-Veg Delights"
-    const textForBrand2 = "We are proud to offer freshly prepared, hygienic, and delicious non-vegetarian meals and supplies made with love and care."
-    const textForBrand3 = "Whether you're hosting a family gathering, a corporate event, or simply craving home-style non-veg dishes, I provide customized orders delivered right to your doorstep. From traditional favorites to special recipes, every dish is prepared with the finest ingredients, respecting local taste and quality standards."
+    const textForBrand2 = "We are proud to offer freshly prepared, hygienic, and delicious non-vegetarian meals."
+    const textForBrand3 = "From traditional favorites to special recipes, every dish is prepared with the finest ingredients, respecting local taste and quality standards."
     brandIntro1.textContent = textForBrand1;
     brandIntro2.textContent = textForBrand2;
     brandIntro3.textContent = textForBrand3;
@@ -27,18 +27,17 @@ function home(){
     //Why choose Us container details
     const brandChooseTitle = document.createElement('h2');
     brandChooseTitle.textContent = 'Why choose us?';
-    const brandChooseUl = document.createElement('ul');
-    brandWhyChoose.append(brandChooseTitle,brandChooseUl);
-    let brandChooseLi = []
+    brandWhyChoose.appendChild(brandChooseTitle);
+    let brandChooseReason = [];
     const textForChoose = ['Fresh, high-quality non-veg preparations',
                             'Made-to-order based on your requirements',
                             'Timely and hygienic delivery',
                             "Authentic flavors tailored to Surti's palate"
     ]
     for(let i = 0; i < 4; i++){
-        brandChooseLi[i] = document.createElement('li');
-        brandChooseLi[i].textContent = textForChoose[i];
-        brandChooseUl.appendChild(brandChooseLi[i]);
+        brandChooseReason[i] = document.createElement('div');
+        brandChooseReason[i].textContent = textForChoose[i];
+        brandWhyChoose.appendChild(brandChooseReason[i]);
     }
 
     //Contact Address details
