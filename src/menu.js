@@ -11,7 +11,7 @@ function menu(){
               'Mamna Gravy','Paya(1 Pair)','Bheja Fry(1 piece)',
               'Chicken Fry','Chicken Tikka','Green Chicken',
               'Angara Chicken','Tandoori Chicken','Golden Tikka',
-              'Chicken Peri Peri','Malai Cheese Tikka','Chicken Butter Masala(Gravy)',
+              'Chicken Peri Peri','Malai Cheese Tikka','Chicken Butter Masala',
               'Chicken Curry(Gravy)','Lemon Chicken(Gravy)',
               'Mutton Biryani','Chicken Biryani'];
   
@@ -37,33 +37,34 @@ function menu(){
   let headerList = [];
   let countUpto;
   const leng = [9,11,2];
+
   for(let i = 0; i< 3; i++){
-      header[i] = document.createElement('div');
-      header[i].className = 'menu-title';
-      headerTitle[i] = document.createElement('h2');
-      perKg[i] = document.createElement('h2');
-      headerTitle[i].textContent = menuName[i];
-      headerList[i] = document.createElement('ul');
-      perKg[i].textContent = menuKg;
-      header[i].append(headerTitle[i],perKg[i]);
-      console.log(header[i]);
-      menu[i] = [];
-      price[i] = [];
-      menuDiv[i] = [];
-      countUpto = counter + leng[i];
-      for(let j = counter; j < countUpto; j++){
-          menuDiv[i][j] = document.createElement('div');
-          menuDiv[i][j].className = 'menu-rate'
-          menu[i][j] = document.createElement('li');
-          menu[i][j].textContent = menuList[j];
-          price[i][j] = document.createElement('li');
-          price[i][j].textContent = menuPrice[j];
-          headerList[i].appendChild(menuDiv[i][j]);
-          menuDiv[i][j].append(menu[i][j],price[i][j]);
-          counter++;
+    header[i] = document.createElement('div');
+    header[i].className = 'menu-title';
+    headerTitle[i] = document.createElement('h2');
+    headerTitle[i].textContent = menuName[i];
+    perKg[i] = document.createElement('h2');
+    perKg[i].textContent = menuKg;
+    headerList[i] = document.createElement('ul');
+    header[i].append(headerTitle[i],perKg[i]);
+    menu[i] = [];
+    price[i] = [];
+    menuDiv[i] = [];
+    countUpto = counter + leng[i];
+    for(let j = counter; j < countUpto; j++){
+      menuDiv[i][j] = document.createElement('div');
+      menuDiv[i][j].className = 'menu-rate'
+      menu[i][j] = document.createElement('li');
+      menu[i][j].textContent = menuList[j];
+      price[i][j] = document.createElement('li');
+      price[i][j].textContent = menuPrice[j];
+      headerList[i].appendChild(menuDiv[i][j]);
+      menuDiv[i][j].append(menu[i][j],price[i][j]);
+      counter++;
       }
       menuCard.append(header[i],headerList[i]);
     }
+
   return menuPage;
 }
 export default menu();

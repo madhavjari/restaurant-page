@@ -6,14 +6,37 @@
  
 }
 
-#content{
+body{
     background-image: url(../img/background.jpg);
     background-size: cover;
     min-height: 100vh;
 }
 
+nav{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav > button{
+    font-size: 2rem;
+    padding: 1rem;
+    border: none;
+    color: var(--orange);
+    appearance: none;
+    cursor: pointer;
+    background: none;
+}
+
+nav > button:hover{
+    color:var(--light-pink);
+}
+
 :root{
-    --light-pink: rgba(243, 195, 160, 0.8);
+    --light-pink: rgba(243, 195, 160,0.8);
     --orange: rgb(236, 74, 24);
 }
 
@@ -45,15 +68,23 @@ h1{
     font-weight: bold;
     width: 28rem;
     margin: 0 auto;
+    display: grid;
+}
+
+.menu > div{
+    gap: 1rem;
+}
+
+.menu > div > ul{
+    display: grid;
+    gap: 0.2rem;
 }
 
 .home > div{
-    display: grid;
     gap: 0.5rem;
 }
 
 .contact > div{
-    display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 2rem;
 }
@@ -64,7 +95,8 @@ h1{
 }
 
 .menu-title,.menu-rate{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     display: flex;
-    justify-content: left;
-    gap: 10rem;
+    justify-content:space-between;
 }
